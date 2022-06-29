@@ -6,7 +6,7 @@ const contato = collection(database,'contato')
 
 export default function Read() {
   
-  const [lista,setLista] = useState([])
+  const [lista, setLista] = useState([])
   const read = ()=>{
   getDocs(query(contato,orderBy("nome")))
     .then((data)=>{
