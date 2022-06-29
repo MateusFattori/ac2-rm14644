@@ -6,11 +6,11 @@ const contato = collection(database,'contato')
 
 export default function Read() {
   
-  const [contatoLista,setContatoLista] = useState([])
+  const [lista,setLista] = useState([])
   const read = ()=>{
   getDocs(query(contato,orderBy("nome")))
     .then((data)=>{
-      setContatoLista(data.docs.map((item)=>{
+      setLista(data.docs.map((item)=>{
         return{...item.data(), id:item.id}
       }))
     })
